@@ -1,6 +1,6 @@
 >## Objetivo
 
-A ideia neste Sample em micro serviços é, demonstrar o usos de tecnologias como GRPC, API, Worker, Kafka como messageria, Banco de dados (SQL SERVER) e por fim, container em docker.
+A ideia neste Sample em micro serviços é, demonstrar o uso de tecnologias como GRPC, API, Worker, Kafka como messageria, Banco de dados (SQL SERVER) e por fim, container em docker.
 
 Para facilitar, há um aquivo docker compose no qual é possível subir todos os serviços.
 
