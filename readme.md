@@ -4,13 +4,15 @@ A ideia neste Sample em micro serviços é, demonstrar o usos de tecnologias com
 
 Para facilitar, há um aquivo docker compose no qual é possível subir todos os serviços.
 
+O kafka já está no docker compose como um serviço que pode ser subido como um container.
+
 >## Fontes e Links para Subir Container Kafka e SQL Server
 
 * [Apache Kafka - Docker](https://medium.com/azure-na-pratica/apache-kafka-kafdrop-docker-compose-montando-rapidamente-um-ambiente-para-testes-606cc76aa66)
 * [Localhost kafka container](http://localhost:19000/)
 * [SQL Server 2019 - Docker](https://docs.microsoft.com/pt-br/sql/linux/quickstart-install-connect-docker?view=sql-server-ver15&pivots=cs1-bash)
 
->### Criando um Rede no Docker
+>### Criando uma Rede no Docker
 
 ``` ini
 docker network create -d bridge laboratorio
@@ -25,9 +27,9 @@ docker network connect laboratorio IdContainer
 >### Tópico
 Assim que o serviço do kafka estiver online, será necessário criar um tópico para que os serviços possam conectar. No exemplo usado neste repo, foi criado tópico ```CLIENTE_ALTERAR``` como fila principal.
 
-Basta acessar o link descrito como **Localhost kafka container**, clicar em +New e na caixa de texto que for exebida, inserir o nome do tópico e salvar.
+Basta acessar o link descrito como **Localhost kafka container**, clicar em **+New** e na caixa de texto que for exebida, inserir o nome do tópico e salvar.
 
-Para casos aonde teremos falhas, o tópico criado como deadletter é ```CLIENTE_ALTERAR_DEAD_LETTER```. 
+Para casos onde teremos falhas, o tópico criado como deadletter é usado para cenários de falhas. O tópico criado no sample foi ```CLIENTE_ALTERAR_DEAD_LETTER```. 
 
 >## Banco de Dados
 
