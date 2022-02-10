@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcService.Cliente";
+
+import "google/protobuf/timestamp.proto";
+
+package cliente;
+
+service Cliente {
+  rpc ObterCliente (RequestCliente) returns (Response);
+}
+
+message RequestCliente {
+	string IdCliente = 1;
+}
+
+message Response {
+    string Id = 1;
+    string Nome = 2;
+    google.protobuf.Timestamp DataNascimento = 3;
+    TipoStatus Ativo = 4;
+    int32 StatusCode = 5;
+}
+
+enum TipoStatus {
+    Nao = 0;
+    Sim = 1;
+}
